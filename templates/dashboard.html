@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <a href="/add/">Add New Course</a>
+  <h3>Your Enrollments</h3>
+  <ul>
+    {% for e in enrollments %}
+      <li>{{ e.course.title }}</li>
+    {% empty %}
+      <li>No enrollments yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

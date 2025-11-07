@@ -1,0 +1,24 @@
+<!-- Add Course Page -->
+{% extends 'base.html' %}
+
+{% block title %}Add New Course - Course Portal{% endblock %}
+
+{% block content %}
+  <div class="course-form-container">
+    <h2>Create a New Course</h2>
+    <p class="form-description">Fill in the details below to add a new course to your dashboard.</p>
+
+    <form method="POST" class="course-form">
+      {% csrf_token %}
+
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Create Course</button>
+        <a href="/dashboard/" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
